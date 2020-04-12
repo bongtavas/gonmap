@@ -21,3 +21,5 @@ You can also specify port range using the '-' delimiter
 ```bash
 sudo ./gonmap -p 1-22,443-600,5443 google.com
 ```
+
+If you don't specify a port argument, the default 1000 ports of nmap will be used.
