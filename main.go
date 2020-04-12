@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"os"
 
@@ -8,14 +9,17 @@ import (
 )
 
 func main() {
-	if len(os.Args) != 3 {
-		log.Printf("Usage: %s <host/ip> <port>\n", os.Args[0])
+	if len(os.Args) < 2 {
+		log.Printf("Usage: %s <host/ip>\n", os.Args[0])
 		os.Exit(-1)
 	}
-	log.Printf("gonmap %s %s", os.Args[1], os.Args[2])
 
-	dstHostname := os.Args[1]
-	dstPortStr := os.Args[2]
+	dstPorts := flag.String("p", "default", "Ports to scan")
+	flag.Parse()
 
-	tcpscan.SynScan(dstHostname, dstPortStr)
+	dstHostname := flag.Args()[0]
+
+	log.Println(*dstPorts)
+
+	tcpscan.SynScan(dstHostname, *dstPorts)
 }
