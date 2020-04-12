@@ -7,13 +7,16 @@ go build -o gonmap main.go
 ```
 
 ## Running
+Note: `sudo` is needed to be able to write directly to the wire
 ```bash
-./gonmap <hostname> <port>
+sudo ./gonmap -p <comma-separted-ports> <hostname>
 ```
 
-Example: Check if google.com port 80 is open
-Need `sudo` to be able to write directly to the wire
 ```bash
-sudo gonmap google.com 80
+sudo ./gonmap google.com -p 80,443,22
 ```
 
+You can also specify port range using the '-' delimiter
+```bash
+sudo ./gonmap -p 1-22,443-600,5443 google.com
+```
