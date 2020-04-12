@@ -12,6 +12,8 @@ go build -o gonmap main.go
 ```
 
 Example: Check if google.com port 80 is open
+Need `sudo` to be able to write directly to the wire
 ```bash
-./gonmap google.com 80
+sudo gonmap google.com 80
 ```
+
