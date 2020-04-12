@@ -12,6 +12,7 @@ Note: `sudo` is needed to be able to write directly to the wire
 sudo ./gonmap -p <comma-separted-ports> <hostname>
 ```
 
+Ex:
 ```bash
 sudo ./gonmap google.com -p 80,443,22
 ```
