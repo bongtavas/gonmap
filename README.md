@@ -23,3 +23,10 @@ sudo ./gonmap -p 1-22,443-600,5443 google.com
 ```
 
 If you don't specify a port argument, the default 1000 ports of nmap will be used.
+
+
+## TODO
+ * [x] TCP SYN Scan
+ * [ ] UDP Scan
+ * [ ] Service/Banner Grabbing
+ * [ ] OS Detection
