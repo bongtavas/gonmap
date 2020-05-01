@@ -1,6 +1,12 @@
 # gonmap
 nmap written in Go
 
+## Features
+ * [x] TCP SYN Scan
+ * [x] UDP Scan  - Port 53 DNS, Port 161 SNMP (Enable through 'udp' flag)
+ * [ ] Service/Banner Grabbing
+ * [ ] OS Detection
+
 ## Building
 ```bash
 go build -o gonmap main.go
@@ -24,9 +30,11 @@ sudo ./gonmap -p 1-22,443-600,5443 google.com
 
 If you don't specify a port argument, the default 1000 ports of nmap will be used.
 
+UDP Scanning is disbled by default, use the flag "udp" to enable it
+```bash
+sudo ./gonmap -udp -p 8.8.8.8
+```
 
-## TODO
- * [x] TCP SYN Scan
- * [ ] UDP Scan
- * [ ] Service/Banner Grabbing
- * [ ] OS Detection
+```bash
+sudo ./gonmap -udp -p demo.snmplabs.com
+```
