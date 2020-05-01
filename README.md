@@ -32,9 +32,9 @@ If you don't specify a port argument, the default 1000 ports of nmap will be use
 
 UDP Scanning is disbled by default, use the flag "udp" to enable it
 ```bash
-sudo ./gonmap -udp -p 8.8.8.8
+sudo ./gonmap -udp 8.8.8.8
 ```
 
 ```bash
-sudo ./gonmap -udp -p demo.snmplabs.com
+sudo ./gonmap -udp demo.snmplabs.com
 ```
