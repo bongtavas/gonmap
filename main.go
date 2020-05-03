@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/bongtavas/gonmap/lib/tcpscan"
+	"github.com/bongtavas/gonmap/lib/udpscan"
 )
 
 func main() {
@@ -15,6 +16,7 @@ func main() {
 	}
 
 	dstPorts := flag.String("p", "default", "Ports to scan")
+	udpFlag := flag.Bool("udp", false, "Enable UDP Port Scanning")
 	flag.Parse()
 
 	dstHostname := flag.Args()[0]
@@ -22,4 +24,7 @@ func main() {
 	log.Println(*dstPorts)
 
 	tcpscan.SynScan(dstHostname, *dstPorts)
+	if *udpFlag {
+		udpscan.UdpScan(dstHostname)
+	}
 }
