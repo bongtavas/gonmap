@@ -77,10 +77,10 @@ func printResults(openPortList *[]string, closedPortList *[]string) {
 	table.SetHeader([]string{"Port", "Protocol", "Status"})
 
 	for _, op := range *openPortList {
-		table.Append([]string{op, "UDP", "open"})
+		table.Append([]string{op, "UDP", "OPEN"})
 	}
 	for _, cp := range *closedPortList {
-		table.Append([]string{cp, "UDP", "closed"})
+		table.Append([]string{cp, "UDP", "CLOSED"})
 	}
 
 	table.Render()
